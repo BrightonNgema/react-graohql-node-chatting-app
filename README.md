@@ -1,4 +1,4 @@
-# react-graphql-node-chatting-app
+# react-graphql-node-chatting-app-server
 
 currently connects to local mongoDB
 
