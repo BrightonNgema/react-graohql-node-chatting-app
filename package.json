@@ -5,7 +5,7 @@
     "node": "12.x"
   },
   "description": "",
-  "main": "server.js",
+  "main": "index.js",
   "dependencies": {
     "apollo-server": "^2.16.1",
     "bcrypt": "^3.0.7",
