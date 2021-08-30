@@ -4,8 +4,6 @@
   "engines": {
     "node": "12.x"
   },
-  "description": "",
-  "main": "index.js",
   "dependencies": {
     "apollo-server": "^2.16.1",
     "bcrypt": "^3.0.7",
@@ -15,7 +13,8 @@
     "graphql-subscriptions": "^1.2.1",
     "jsonwebtoken": "^8.5.1",
     "mongoose": "^5.8.6",
-    "mongoose-autopopulate": "^0.14.0"
+    "mongoose-autopopulate": "^0.14.0",
+    "nodemon": "^2.0.2"
   },
   "devDependencies": {
     "nodemon": "^2.0.12"
@@ -23,8 +22,5 @@
   "scripts": {
     "dev": "nodemon index.js --ignore client/",
     "start": "nodemon index.js"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC"
+  }
 }
