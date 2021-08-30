@@ -20,6 +20,12 @@ mongoose
   .catch(err => console.log("DB Err", err));
 
   const server = new ApolloServer({
+    introspection: true, // enables introspection of the schema
+    playground: true, // enables the actual playground
+    cors: {
+      origin: '*',			// <- allow request from all domains
+      credentials: true
+    },
     typeDefs,
     resolvers,
     context: contextMiddleware,
