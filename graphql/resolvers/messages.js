@@ -82,7 +82,10 @@ module.exports = {
     Subscription:{
         newMessage:{
             subscribe:withFilter((_, __, {context : { user, pubsub } }) => {
-                if(!user) throw new AuthenticationError("Unauthenticated");
+                console.log(user)
+                // if(!user) {
+                //     throw new AuthenticationError("Unauthenticated new");
+                // }
                 return pubsub.asyncIterator('NEW_MESSAGE') 
             }, ({newMessage}, _,{context : { user, pubsub }}) =>{
                 if(newMessage.from === user.username || newMessage.to === user.username ){
@@ -93,7 +96,9 @@ module.exports = {
         },
         newReaction:{
             subscribe:withFilter((_, __, {context : { user, pubsub } }) => {
-                if(!user) throw new AuthenticationError("Unauthenticated");
+                if(!user) {
+                    throw new AuthenticationError("Unauthenticated");
+                }
                 return pubsub.asyncIterator('NEW_REACTION') 
             }, ({newReaction}, _,{context : { user, pubsub }}) =>{
                 if(newReaction.message.from === user.username || newReaction.message.to === user.username ){

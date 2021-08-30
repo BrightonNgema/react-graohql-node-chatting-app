@@ -1,5 +1,8 @@
 const { ApolloServer, gql } = require('apollo-server');
 const mongoose = require("mongoose");
+if (process.env.NODE_ENV !== 'production') {
+  require('dotenv').config();
+}
 // The GraphQL schema
 
 
@@ -16,14 +19,13 @@ mongoose
   .then(() => console.log("DB Connected"))
   .catch(err => console.log("DB Err", err));
 
-const server = new ApolloServer({
-    introspection: true, // enables introspection of the schema
-  playground: true,
-  typeDefs,
-  resolvers,
-  context:contextMiddleware
-});
+  const server = new ApolloServer({
+    typeDefs,
+    resolvers,
+    context: contextMiddleware,
+  })
 
 server.listen().then(({ url }) => {
   console.log(`🚀 Server ready at ${url}`);
 });
+
