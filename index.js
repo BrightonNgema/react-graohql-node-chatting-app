@@ -31,7 +31,8 @@ mongoose
     context: contextMiddleware,
   })
 
-server.listen().then(({ url }) => {
-  console.log(`🚀 Server ready at ${url}`);
-});
+  server.listen(process.env.PORT || 4000);
+// server.listen().then(({ url }) => {
+//   console.log(`🚀 Server ready at ${url}`);
+// });
 
