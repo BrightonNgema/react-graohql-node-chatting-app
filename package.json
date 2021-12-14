@@ -20,7 +20,7 @@
     "nodemon": "^2.0.12"
   },
   "scripts": {
-   "postinstall": "npm run build",
-    "start": "node index.js"
+   "dev": "nodemon index.js --ignore client/",
+    "start": "nodemon index.js"
   }
 }
